@@ -14,3 +14,9 @@ export const removeCity = ({ id = '' }) => ({
     type: CITY_ACTION_TYPES.REMOVE_CITY,
     id
 })
+
+export const setWeather = ({ id, weather }) => ({
+    type: CITY_ACTION_TYPES.SET_WEATHER_RESULT,
+    id,
+    weather
+})

@@ -22,6 +22,14 @@ const store = configureStore()
 // console.log(store.getState())
 
 
+// async function fetchWeather() {
+//   const result = await getWeather('Seattle')
+//   console.log(result)
+// }
+
+//  fetchWeather()
+
+
 ReactDOM.render(
   <React.StrictMode>
   <Provider store={store}>
