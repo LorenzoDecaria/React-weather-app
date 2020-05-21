@@ -16,7 +16,6 @@ function* fetchWeather(action) {
 }
 
 function* watchFetchWeatherRequest() {
-    console.log("watchFetchWeatherRequest")
     yield takeEvery(CITY_ACTION_TYPES.ADD_CITY, fetchWeather)
 }
 
