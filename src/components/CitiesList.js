@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import CityItem from './CityItem'
 
 const CitiesList = (props) => {
+
+  useEffect( () => {
+    localStorage.setItem('cities', JSON.stringify(props.cities))
+  }, [props.cities])
+
   return (
     <div>
       {props.cities.map(
