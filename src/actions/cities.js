@@ -6,7 +6,8 @@ export const addCity = ({ name = '' }) => ({
     type: CITY_ACTION_TYPES.ADD_CITY,
     city: {
         id: uuidv4(),
-        name
+        name,
+        loading: true
     }
 })
 
@@ -19,4 +20,10 @@ export const setWeather = ({ id, weather }) => ({
     type: CITY_ACTION_TYPES.SET_WEATHER_RESULT,
     id,
     weather
+})
+
+export const setWeatherError = ({ id, error }) => ({
+    type: CITY_ACTION_TYPES.SET_WEATHER_ERROR,
+    id,
+    error
 })

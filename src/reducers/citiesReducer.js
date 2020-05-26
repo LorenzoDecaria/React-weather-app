@@ -13,7 +13,19 @@ export const citiesReducer = (state = citiesReducerInitialState, action) => {
                 if(city.id === action.id) {
                     city = {
                         ...city,
-                        weather: action.weather
+                        weather: action.weather,
+                        loading: false
+                    }
+                }
+                return city
+            })
+        case CITY_ACTION_TYPES.SET_WEATHER_ERROR: 
+            return state.map( (city) => {
+                if(city.id === action.id) {
+                    city = {
+                        ...city,
+                        error: action.error,
+                        loading: false
                     }
                 }
                 return city

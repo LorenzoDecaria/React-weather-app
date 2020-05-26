@@ -1,7 +1,7 @@
 import { takeEvery, call, fork, put } from 'redux-saga/effects'
 import { CITY_ACTION_TYPES } from '../actions/index'
 import { getWeather } from '../apiClient/client'
-import { setWeather } from '../actions/cities'
+import { setWeather, setWeatherError } from '../actions/cities'
 
 function* fetchWeather(action) {
     try {
@@ -11,7 +11,10 @@ function* fetchWeather(action) {
             weather: result
         }))
     } catch (error) {
-        console.log(error)
+        yield put(setWeatherError({
+            id: action.city.id,
+            error
+        }))
     }
 }
 
