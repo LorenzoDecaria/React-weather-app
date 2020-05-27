@@ -15,7 +15,15 @@ const Header = (props) => {
     <div>
       <h1>Weather App</h1>
       <label htmlFor='city'>Add a city:</label>
-      <input type='text' name='city' placeholder='type the name of a city' value={city} onChange={ (e) => setCity(e.target.value) }/>
+      <input type='text' 
+        name='city' 
+        placeholder='type the name of a city' 
+        value={city} 
+        onChange={ (e) => setCity(e.target.value) } 
+        onKeyUp={ (e) => {
+          if (e.keyCode === 13) {
+            handleAddCity(e)
+      }} }/>
       <button disabled={city.length === 0} onClick={ handleAddCity }>Add</button>
     </div>);
 };
