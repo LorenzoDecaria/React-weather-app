@@ -14,12 +14,15 @@ const CityItem = (props) => {
   }
 
   return (
-    <div>
+    <div className='cityItem'>
       <h3>{props.city.name}</h3>
-      {props.city.loading && <p>Loading...</p>}
-      {props.city.weather && <div><p>{description()}</p><img src={props.city.weather ? icon() : ''} alt=''/></div>}
-      {props.city.error && <p>{(props.city.error.message ?? "Error retrieving weather")}</p>}
-      <button onClick={() => props.dispatch(removeCity({id: props.city.id}))}>Remove</button>
+      <div className='cityItem__content'>
+        {props.city.loading && <p>Loading...</p>}
+        {props.city.weather && <p>{description()}</p>}
+        {props.city.weather && <img src={props.city.weather ? icon() : ''} alt=''/>}
+        {props.city.error && <p>{(props.city.error.message || "Error retrieving weather")}</p>}
+        <button onClick={() => props.dispatch(removeCity({id: props.city.id}))}>Remove</button>
+      </div>
     </div>);
 };
  

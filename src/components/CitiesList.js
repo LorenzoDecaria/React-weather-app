@@ -1,28 +1,29 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import CityItem from './CityItem'
+import CityItem from "./CityItem";
 
 const CitiesList = (props) => {
-
-  useEffect( () => {
-    localStorage.setItem('cities', JSON.stringify(props.cities))
-  }, [props.cities])
+  useEffect(() => {
+    localStorage.setItem("cities", JSON.stringify(props.cities));
+  }, [props.cities]);
 
   return (
-    <div>
-      {props.cities.map(
-        (city) => <CityItem key={city.id} city={city} />
-      )}
+    <div className='container'>
+      <div>
+        {props.cities.map((city) => (
+          <CityItem key={city.id} city={city} />
+        ))}
+      </div>
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    cities: state.cities
-  }
-}
+    cities: state.cities,
+  };
+};
 
-const ConnectedCitiesList = connect(mapStateToProps)(CitiesList)
+const ConnectedCitiesList = connect(mapStateToProps)(CitiesList);
 
 export default ConnectedCitiesList;

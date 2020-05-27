@@ -1,0 +1,9 @@
+button {
+    cursor: pointer;
+    padding: $s-size $m-size;
+}
+
+button.link {
+    background: none;
+    border: none;
+}

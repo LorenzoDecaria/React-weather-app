@@ -1,0 +1,13 @@
+.navigationBar {
+    background-color: $navBarBackgroundColor;
+    padding: $l-size $m-size;
+}
+
+.navigationBar__title {
+    color: $lightTextColor;
+    padding-bottom: $s-size;
+}
+
+.navigationBar__subtitle {
+    color: $lightTextColor;
+}

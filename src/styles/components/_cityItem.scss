@@ -1,0 +1,11 @@
+.cityItem {
+    background-color: $lightGreyBackgroundColor;
+    border-bottom: 1px solid darken($color: $lightGreyBackgroundColor, $amount: 20);
+    padding: $m-size $m-size;
+}
+
+.cityItem__content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
